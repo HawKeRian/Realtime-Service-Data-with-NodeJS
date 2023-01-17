@@ -1,0 +1,119 @@
+@media only screen and (max-width: 342px) {
+    .freeDiv2 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .freeDiv {
+        display: none;
+    }
+    .cp_entry {
+        font-size: 12px;
+    }
+    .cp_lift {
+        font-size: 12px;
+    }
+    #time {
+        font-size: 10px;
+    }
+    #floor_menu button {
+        font-size: small;
+        padding: auto;
+    }
+}
+@media only screen and (min-width: 600px) {
+    #floor_menu button {
+        font-size: 25px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5;
+        padding-bottom: 5;
+    }
+
+    #nav_button a {
+        font-size: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #floor_menu a {
+        font-size: 20px;
+    }
+}
+
+#nav_button a {
+    border-radius: 0px;
+} 
+
+
+/* ---------- Parking Env ---------- */
+.floor_layout {
+    width: 100%;
+}
+
+.floor_layout {
+    border-collapse: collapse;
+}
+
+.floor_layout td {
+    width: 50px;
+    padding: 0px;
+}
+
+.cp_entry {
+    background-color: rgb(250, 180, 90);
+}
+
+.cp_block {
+    background-color: rgb(150, 150, 150);
+}
+
+.cp_path {
+    background-color: rgb(200, 200, 200);
+}
+
+.cp_pillar {
+    background-color: rgb(100, 100, 100);
+}
+
+.cp_door {
+    background-color:aqua;
+}
+
+
+/* ---------- Parking Lot Zone ---------- */
+.cp_a_zone {
+    border-width: 2px;
+    border-color: rgb(0, 200, 250);
+    background-color: rgb(255, 255, 255);
+}
+
+#card_a_zone .card-header {
+    background-color: rgb(0, 200, 250);
+}
+
+
+.cp_b_zone {
+    border-width: 2px;
+    border-color: rgb(250, 200, 0);
+    background-color: rgb(255, 255, 255);
+
+}
+
+#card_b_zone .card-header {
+    background-color: rgb(250, 200, 0);
+    
+}
+
+
+.cp_c_zone {
+    border-width: 2px;
+    border-color: rgb(228, 46, 213);
+    background-color: rgb(255, 255, 255);
+
+} 
+
+#card_c_zone .card-header {
+    background-color: rgb(228, 46, 213);
+} 

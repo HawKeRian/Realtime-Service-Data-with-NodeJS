@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>muRata | Car Park</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body class="bg-dark">
+    <div class="container-fluid m-0 p-0">
+        <div class="text-center py-3 bg-light w-100 mb-5">
+            <img src="images/murata_logo.png" alt="muRata Logo" width="100px">
+        </div>
+
+        <div class="content-page align-self-center">
+
+            <h3 class="text-light text-center">MTL | Smart Car Parking</h3>
+            <h4 class="text-light text-center mb-4">จำนวนที่จอดรถที่ว่าง</h4>
+
+            <div class="text-end mx-4 mt-2">
+                <span id="time" class="text-danger"></span>
+            </div>
+
+            <hr class="hr text-light mx-4">
+
+            <div class="row mb-5 justify-content-center">
+                <div class="col freeDiv"></div>
+                <div class="col px-5">
+                    <div class="card border-0">
+                        <a href="/3rd_floor" class="btn btn-outline-success border-0 px-0">
+                            <div class="row">
+                                <div class="col-auto p-0">
+                                    <div class="card-header bg-success text-light d-flex h-100 px-1">
+                                        <h3 class="card-title">3rd Floor</h3>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card-body">
+                                        <h4 class="mt-1">
+                                            
+                                            <span id="totalCar_3"></span>
+                                        </h4>   
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="card-footer bg-success text-light d-flex h-100 align-items-center">
+                                        <h5 id="status_3"></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col freeDiv"></div>
+            </div>
+
+
+
+            <div class="row mb-5 justify-content-center">
+                <div class="col freeDiv"></div>
+                <div class="col px-5">
+                    <div class="card border-0">
+                        <a href="/4th_floor" class="btn btn-outline-danger border-0 px-0">
+                            <div class="row">
+                                <div class="col-auto p-0">
+                                    <div class="card-header bg-danger text-light d-flex h-100 px-1">
+                                        <h3 class="card-title">4th Floor</h3>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card-body">
+                                        <h4 class="mt-1">
+                                            
+                                            <span id="totalCar_4"></span>
+                                        </h4>   
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="card-footer bg-danger text-light d-flex h-100 align-items-center">
+                                        <h5 id="status_4"></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col freeDiv"></div>
+            </div>
+
+
+
+            <div class="row mb-5 justify-content-center">
+                <div class="col freeDiv"></div>
+                <div class="col px-5">
+                    <div class="card border-0">
+                        <a href="/5th_floor" class="btn btn-outline-primary border-0 px-0">
+                            <div class="row">
+                                <div class="col-auto p-0">
+                                    <div class="card-header bg-primary text-light d-flex h-100 px-1">
+                                        <h3 class="card-title">5th Floor</h3>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card-body">
+                                        <h4 class="mt-1">
+                                            
+                                            <span id="totalCar_5"></span>
+                                        </h4>   
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="card-footer bg-primary text-light d-flex h-100 align-items-center">
+                                        <h5 id="status_5"></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col freeDiv"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/main.js"></script>

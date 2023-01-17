@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Park | 5th Floor - Overview</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="bg-dark">
+    <div class="container-fluid m-0 p-0">
+        <div class="text-center py-3 bg-light w-100">
+            <img src="images/murata_logo.png" alt="muRata Logo" width="100px">
+        </div>
+
+        <div class="mb-3 d-flex justify-content-center">
+            <div class="btn-group w-100" id="nav_button">
+                <a href="/" class="btn btn-secondary">หน้าหลัก</a>
+                <a href="/3rd_floor" class="btn btn-secondary">ชั้น 3</a>
+                <a href="/4th_floor" class="btn btn-secondary">ชั้น 4</a>
+                <a href="/5th_floor" class="btn btn-secondary active">ชั้น 5</a>
+            </div>
+        </div>
+
+        <div class="row mx-1 mb-3 align-items-center">
+            <div class="col-auto " id="floor_menu">
+                <!-- <a href="/" class="btn btn-primary d-flex align-items-center">
+                    Return  
+                </a> -->
+                <button type="button" class="btn btn-primary border-0 px-3 active">
+                    <b>Smart Car Parking - <span class="text-uppercase">5th Floor</span></b> 
+                </button>
+            </div>
+            <div class="col freeDiv"></div>
+            <div class="col freeDiv2"></div>
+
+
+            <div class="col-auto p-0 me-2">
+                <span id="time" class="text-danger"></span>
+            </div>
+        </div>
+
+        <hr class="hr text-light mx-4">
+
+        <div class="row text-center mx-4 ">
+            <span class="text-light align-center">จำนวนช่องว่างของแต่ละโซน</span>
+        </div>
+
+        <div class="row mx-4 mt-1 mb-4 justify-content-center">
+            <div class="col freeDiv"></div>
+            <div class="col freeDiv"></div>
+
+            <div class="col card text-center p-0 mx-1" id="card_a_zone">
+                <div class="card-header p-0">
+                    <b>A</b> 
+                </div>
+                <div class="card-body p-0" id="overall_5A">
+                    -
+                </div>
+            </div>
+
+            <div class="col card text-center p-0 mx-1" id="card_b_zone">
+                <div class="card-header p-0">
+                   <b>B</b>
+                </div>
+                <div class="card-body p-0" id="overall_5B">
+                    -
+                </div>
+            </div>
+
+            <div class="col card text-center p-0 mx-1" id="card_c_zone">
+                <div class="card-header p-0">
+                    <b>C</b>
+                </div>
+                <div class="card-body p-0" id="overall_5C">
+                    -
+                </div>
+            </div>
+
+            <div class="col freeDiv"></div>
+            <div class="col freeDiv"></div>
+        </div>
+
+        <hr class="hr text-light mx-4">
+
+        <div class="m-3">
+            <table class="floor_layout">
+                <tbody class="text-center">
+                    <tr id="entry_zone">
+                        <td class="cp_a_zone" id="slot_5A051" >-</td>
+                        <td class="cp_a_zone" id="slot_5A052" >-</td>
+                        <td class="cp_a_zone" id="slot_5A053" >-</td>
+                        <td class="cp_block"     colspan="2"></td>
+                        <td class="cp_entry"    colspan="4">ทางขึ้น-ลง</td>
+                        <td class="cp_block"     colspan="3"></td>
+                        <td class="cp_door"     colspan="3">ประตู</td>
+                        <td class="cp_block"     colspan="6"></td>
+                        <td class="cp_b_zone" id="slot_5B046">-</td>
+                        <td class="cp_b_zone" id="slot_5B047">-</td>
+                        <td class="cp_c_zone" id="slot_5C001">-</td>
+                        <td class="cp_c_zone" id="slot_5C002">-</td>
+                        <td class="cp_c_zone" id="slot_5C003">-</td>
+                        <td class="cp_block"     colspan="2"></td>
+                    </tr>
+                    <tr id="south_path_1">
+                        <td class="cp_path"     colspan="27" rowspan="2"></td>
+                        <td class="cp_c_zone" id="slot_5C010">-</td>
+                    </tr>
+                    <tr id="south_path_2">
+                        <td class="cp_c_zone" id="slot_5C011">-</td>
+                    </tr>
+                    <tr id="south_park_1">
+                        <td class="cp_path" colspan="2" rowspan="2"></td>
+                        <td class="cp_a_zone" id="slot_5A001" >-</td>
+                        <td class="cp_a_zone" id="slot_5A002" >-</td>
+                        <td class="cp_a_zone" id="slot_5A003" >-</td>
+                        <td class="cp_a_zone" id="slot_5A004" >-</td>
+                        <td class="cp_a_zone" id="slot_5A005" >-</td>
+                        <td class="cp_a_zone" id="slot_5A006" >-</td>
+                        <td class="cp_a_zone" id="slot_5A007" >-</td>
+                        <td class="cp_a_zone" id="slot_5A008" >-</td>
+                        <td class="cp_a_zone" id="slot_5A009" >-</td>
+                        <td class="cp_a_zone" id="slot_5A010" >-</td>
+                        <!-- Line Between A and B Zone -->
+                        <td class="cp_b_zone" id="slot_5B001" >-</td>
+                        <td class="cp_b_zone" id="slot_5B002" >-</td>
+                        <td class="cp_b_zone" id="slot_5B003" >-</td>
+                        <td class="cp_b_zone" id="slot_5B004" >-</td>
+                        <td class="cp_b_zone" id="slot_5B005" >-</td>
+                        <td class="cp_b_zone" id="slot_5B006" >-</td>
+                        <td class="cp_b_zone" id="slot_5B007" >-</td>
+                        <td class="cp_b_zone" id="slot_5B008" >-</td>
+                        <td class="cp_b_zone" id="slot_5B009" >-</td>
+                        <td class="cp_path" colspan="2" rowspan="2"></td>
+                        <td class="cp_c_zone" id="slot_5C004" >-</td>
+                        <td class="cp_path" colspan="3" rowspan="6"></td>
+                        <td class="cp_c_zone" id="slot_5C012" >-</td>
+                    </tr>
+                    <tr id="south_park_2">
+                        <td class="cp_a_zone" id="slot_5A011" >-</td>
+                        <td class="cp_pillar" colspan="2"></td>
+                        <td class="cp_a_zone" id="slot_5A012" >-</td>
+                        <td class="cp_a_zone" id="slot_5A013" >-</td>
+                        <td class="cp_a_zone" id="slot_5A014" >-</td>
+                        <td class="cp_a_zone" id="slot_5A015" >-</td>
+                        <td class="cp_a_zone" id="slot_5A016" >-</td>
+                        <td class="cp_a_zone" id="slot_5A017" >-</td>
+                        <td class="cp_a_zone" id="slot_5A018" >-</td>
+                        <td class="cp_b_zone" id="slot_5B010" >-</td>
+                        <td class="cp_b_zone" id="slot_5B011" >-</td>
+                        <td class="cp_b_zone" id="slot_5B012" >-</td>
+                        <td class="cp_b_zone" id="slot_5B013" >-</td>
+                        <td class="cp_b_zone" id="slot_5B014" >-</td>
+                        <td class="cp_b_zone" id="slot_5B015" >-</td>
+                        <td class="cp_pillar" colspan="2"></td>
+                        <td class="cp_b_zone" id="slot_5B016" >-</td>
+                        <td class="cp_c_zone" id="slot_5C005" >-</td>
+                        <td class="cp_c_zone" id="slot_5C013" >-</td>
+                    </tr>
+                    <tr id="middle_path_1">
+                        <td class="cp_path" colspan="23" rowspan="2"></td>
+                        <td class="cp_c_zone" id="slot_5C006" >-</td>
+                        <td class="cp_c_zone" id="slot_5C014" >-</td>
+                    </tr>
+                    <tr id="middle_path_2">
+                        <td class="cp_c_zone" id="slot_5C007" >-</td>
+                        <td class="cp_c_zone" id="slot_5C015" >-</td>
+                    </tr>
+                    <tr id="north_park_1">
+                        <td class="cp_path" colspan="2" rowspan="2"></td>
+                        <td class="cp_a_zone" id="slot_5A019" >-</td>
+                        <td class="cp_a_zone" id="slot_5A020" >-</td>
+                        <td class="cp_a_zone" id="slot_5A021" >-</td>
+                        <td class="cp_a_zone" id="slot_5A022" >-</td>
+                        <td class="cp_a_zone" id="slot_5A023" >-</td>
+                        <td class="cp_a_zone" id="slot_5A024" >-</td>
+                        <td class="cp_a_zone" id="slot_5A025" >-</td>
+                        <td class="cp_a_zone" id="slot_5A026" >-</td>
+                        <td class="cp_a_zone" id="slot_5A027" >-</td>
+                        <td class="cp_a_zone" id="slot_5A028" >-</td>
+                        <!-- Line Between A and B Zone -->
+                        <td class="cp_b_zone" id="slot_5B017" >-</td>
+                        <td class="cp_b_zone" id="slot_5B018" >-</td>
+                        <td class="cp_b_zone" id="slot_5B019" >-</td>
+                        <td class="cp_b_zone" id="slot_5B020" >-</td>
+                        <td class="cp_b_zone" id="slot_5B021" >-</td>
+                        <td class="cp_b_zone" id="slot_5B022" >-</td>
+                        <td class="cp_b_zone" id="slot_5B023" >-</td>
+                        <td class="cp_b_zone" id="slot_5B024" >-</td>
+                        <td class="cp_b_zone" id="slot_5B025" >-</td>
+                        <td class="cp_path" colspan="2" rowspan="2"></td>
+                        <td class="cp_c_zone" id="slot_5C008" >-</td>
+                        <td class="cp_c_zone" id="slot_5C016" >-</td>
+                    </tr>
+                    <tr id="north_park_2">
+                        <td class="cp_a_zone" id="slot_5A029" >-</td>
+                        <td class="cp_a_zone" id="slot_5A030" >-</td>
+                        <td class="cp_a_zone" id="slot_5A031" >-</td>
+                        <td class="cp_a_zone" id="slot_5A032" >-</td>
+                        <td class="cp_a_zone" id="slot_5A033" >-</td>
+                        <td class="cp_a_zone" id="slot_5A034" >-</td>
+                        <td class="cp_a_zone" id="slot_5A035" >-</td>
+                        <td class="cp_a_zone" id="slot_5A036" >-</td>
+                        <td class="cp_a_zone" id="slot_5A037" >-</td>
+                        <td class="cp_a_zone" id="slot_5A038" >-</td>
+                        <!-- Line Between A and B Zone -->
+                        <td class="cp_b_zone" id="slot_5B026" >-</td>
+                        <td class="cp_b_zone" id="slot_5B027" >-</td>
+                        <td class="cp_b_zone" id="slot_5B028" >-</td>
+                        <td class="cp_b_zone" id="slot_5B029" >-</td>
+                        <td class="cp_b_zone" id="slot_5B030" >-</td>
+                        <td class="cp_b_zone" id="slot_5B031" >-</td>
+                        <td class="cp_b_zone" id="slot_5B032" >-</td>
+                        <td class="cp_b_zone" id="slot_5B033" >-</td>
+                        <td class="cp_b_zone" id="slot_5B034" >-</td>
+                        <td class="cp_c_zone" id="slot_5C009" >-</td>
+                        <td class="cp_c_zone" id="slot_5C017" >-</td>
+                    </tr>
+                    <tr id="north_path_1">
+                        <td class="cp_path" colspan="23" rowspan="3"></td>
+                        <td class="cp_path" colspan="4" rowspan="2"></td>
+                        <td class="cp_c_zone" id="slot_5C018" >-</td>
+                    </tr>
+                    <tr id="north_path_2">
+                        <td class="cp_c_zone" id="slot_5C019" >-</td>
+                    </tr>
+                    <tr id="north_path_3">
+                        <td class="cp_c_zone" id="slot_5C020" >-</td>
+                        <td class="cp_c_zone" id="slot_5C021" >-</td>
+                        <td class="cp_c_zone" id="slot_5C022" >-</td>
+                        <td class="cp_c_zone" id="slot_5C023" >-</td>
+                        <td class="cp_block"></td>
+                    </tr>
+                    <tr id="noth_park_3">
+                        <td class="cp_a_zone" id="slot_5A039" >-</td>
+                        <td class="cp_a_zone" id="slot_5A040" >-</td>
+                        <td class="cp_a_zone" id="slot_5A041" >-</td>
+                        <td class="cp_a_zone" id="slot_5A042" >-</td>
+                        <td class="cp_a_zone" id="slot_5A043" >-</td>
+                        <td class="cp_a_zone" id="slot_5A044" >-</td>
+                        <td class="cp_a_zone" id="slot_5A045" >-</td>
+                        <td class="cp_a_zone" id="slot_5A046" >-</td>
+                        <td class="cp_a_zone" id="slot_5A047" >-</td>
+                        <td class="cp_a_zone" id="slot_5A048" >-</td>
+                        <td class="cp_a_zone" id="slot_5A049" >-</td>
+                        <td class="cp_a_zone" id="slot_5A050" >-</td>
+                        <!-- Line Between A and B Zone -->
+                        <td class="cp_b_zone" id="slot_5B035" >-</td>
+                        <td class="cp_b_zone" id="slot_5B036" >-</td>
+                        <td class="cp_b_zone" id="slot_5B037" >-</td>
+                        <td class="cp_b_zone" id="slot_5B038" >-</td>
+                        <td class="cp_b_zone" id="slot_5B039" >-</td>
+                        <td class="cp_b_zone" id="slot_5B040" >-</td>
+                        <td class="cp_b_zone" id="slot_5B041" >-</td>
+                        <td class="cp_b_zone" id="slot_5B042" >-</td>
+                        <td class="cp_b_zone" id="slot_5B043" >-</td>
+                        <td class="cp_b_zone" id="slot_5B044" >-</td>
+                        <td class="cp_b_zone" id="slot_5B045" >-</td>
+                        <td class="cp_block" colspan="5"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
+    </div>
+</body>
+</html>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/floorStatus.js"></script>
