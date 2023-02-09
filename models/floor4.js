@@ -1,23 +1,23 @@
 require("dotenv").config();
-const { Client } = require('pg');
+const mysql = require('mysql2/promise')
 
-const client = new Client({
-    user: process.env.PGUSER,
-    host:  process.env.PGHOST,
-    database:  process.env.PGDATABASE,
-    password: process.env.PGPASSWORD,
-    port: process.env.PGPORT,
-});
-    client.connect();
-    
-var Floor4 = async() => {
+async function getData(){
     try {
-        var Items = await client.query(`SELECT * FROM mtlcarpark.floor4`)
+        const connection =await mysql.createConnection({
+            host: process.env.MYSQL_HOST,
+            user: process.env.MYSQL_USER,
+            password: process.env.MYSQL_PASSWORD,
+            database: process.env.MYSQL_DATABASE,
+            port: process.env.MYSQL_PORT,
+            ssl: null,
+            connectTimeout: 0
+        })
 
+        var [Items, field] = await connection.query('SELECT * FROM floor4')
         return { success: true, data: Items }
     } catch (error) {
         return { success: false, data: null }
     }
 }
 
-module.exports = Floor4
+module.exports = { getData };
