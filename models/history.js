@@ -16,10 +16,10 @@ async function getData(){
         })
 
         var [Items, field] = await connection.query('SELECT * FROM history')
-        connection.close()
+        // connection.close()
         return { success: true, data: Items }
     } catch (error) {
-        connection.close()
+        // connection.close()
         return { success: false, data: null }
     }
 }
