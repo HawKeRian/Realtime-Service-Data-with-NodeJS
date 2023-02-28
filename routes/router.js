@@ -12,14 +12,16 @@ router.get('/', async (req, res) =>{
     var overview = await Overview.getData();
     var io = req.app.get('socketio');
 
-    setInterval( async () => {
-        overview = await Overview.getData()
-        io.emit('update', {data:overview.data})
+    async function sendDataOverview() {
+        overview = await Overview.getData();
+        io.emit('update', { data: overview.data });
         console.log('...');
-    }, 5000);
+    }
+
+    await sendDataOverview();
 
     res.render('index', {data: overview.data})
-
+    setInterval(sendDataOverview, 60000);
 })
 
 
@@ -27,13 +29,16 @@ router.get('/3rd_floor', async (req, res) =>{
     var floor3 = await Floor3.getData();
     var io = req.app.get('socketio');
 
-    setInterval( async () => {
+    async function sendData3F() {
         floor3 = await Floor3.getData()
         io.emit('3rd_floor', {data:floor3.data})
-    }, 5000);
+    }
+
+    await sendData3F();
+
 
     res.render('3rd_floor', {data: floor3.data})
-
+    setInterval(sendData3F, 60000);
 })
 
 
@@ -41,26 +46,30 @@ router.get('/4th_floor', async (req, res) =>{
     var floor4 = await Floor4.getData();
     var io = req.app.get('socketio');
 
-    setInterval( async () => {
+    async function sendData4F() {
         floor4 = await Floor4.getData()
         io.emit('4th_floor', {data:floor4.data})
-    }, 5000);
+    }
+
+    await sendData4F();
 
     res.render('4th_floor', {data: floor4.data})
-    
+    setInterval(sendData4F, 60000);
 })
 
 router.get('/5th_floor', async (req, res) =>{
     var floor5 = await Floor5.getData();
     var io = req.app.get('socketio');
 
-    setInterval( async () => {
+    async function sendData5F() {
         floor5 = await Floor5.getData()
         io.emit('5th_floor', {data:floor5.data})
-    }, 5000);
+    }
+
+    await sendData5F();
 
     res.render('5th_floor', {data: floor5.data})
-    
+    setInterval(sendData5F, 60000);
 })
 
 module.exports = router

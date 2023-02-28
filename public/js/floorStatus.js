@@ -38,7 +38,7 @@ var floor_socket = io.connect('/');
                         }
                     }
                 }else{
-                    floor3_slot[i].innerHTML = '-'
+                    floor3_slot[i].innerHTML = '0'
                 }
             }
 
@@ -58,7 +58,7 @@ var floor_socket = io.connect('/');
                     }
                     
                 } else {
-                    overall_f3[i].innerHTML = '-'
+                    overall_f3[i].innerHTML = '0'
                 }                
             }
             overall_f3[i].innerHTML = countSlot3 + ' คัน';            
@@ -97,7 +97,7 @@ var floor_socket = io.connect('/');
                         }
                     }
                 }else{
-                    floor4_slot[i].innerHTML = '-'
+                    floor4_slot[i].innerHTML = '0'
                 }
             }
         }
@@ -116,7 +116,7 @@ var floor_socket = io.connect('/');
                     }
                     
                 } else {
-                    overall_f4[i].innerHTML = '-'
+                    overall_f4[i].innerHTML = '0'
                 }                
             }
             overall_f4[i].innerHTML = countSlot4 + ' คัน';            
@@ -156,7 +156,7 @@ var floor_socket = io.connect('/');
                         }
                     }
                 }else{
-                    floor5_slot[i].innerHTML = '-'
+                    floor5_slot[i].innerHTML = '0'
                 }
             }
         }
