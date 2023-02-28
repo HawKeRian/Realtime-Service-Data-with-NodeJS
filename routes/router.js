@@ -21,7 +21,7 @@ router.get('/', async (req, res) =>{
     await sendDataOverview();
 
     res.render('index', {data: overview.data})
-    setInterval(sendDataOverview, 60000);
+    setInterval(sendDataOverview, 20000);
 })
 
 
@@ -38,7 +38,7 @@ router.get('/3rd_floor', async (req, res) =>{
 
 
     res.render('3rd_floor', {data: floor3.data})
-    setInterval(sendData3F, 60000);
+    setInterval(sendData3F, 20000);
 })
 
 
@@ -54,7 +54,7 @@ router.get('/4th_floor', async (req, res) =>{
     await sendData4F();
 
     res.render('4th_floor', {data: floor4.data})
-    setInterval(sendData4F, 60000);
+    setInterval(sendData4F, 20000);
 })
 
 router.get('/5th_floor', async (req, res) =>{
@@ -69,7 +69,7 @@ router.get('/5th_floor', async (req, res) =>{
     await sendData5F();
 
     res.render('5th_floor', {data: floor5.data})
-    setInterval(sendData5F, 60000);
+    setInterval(sendData5F, 20000);
 })
 
 module.exports = router
