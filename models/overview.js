@@ -12,14 +12,14 @@ async function getData(){
             database: process.env.MYSQL_DATABASE,
             port: process.env.MYSQL_PORT,
             ssl: null,
-            connectTimeout: 0
+            connectTimeout: 200
         })
 
         var [Items, field] = await connection.query('SELECT * FROM overview')
-        connection.close()
+        // connection.close()
         return { success: true, data: Items }
     } catch (error) {
-        connection.close()
+        // connection.close()
         return { success: false, data: null }
     }
 }
