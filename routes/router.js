@@ -15,6 +15,14 @@ router.get('/', async (req, res) =>{
     res.end()
 })
 
+router.get('/api/overview', async (req, res) =>{
+    var overview = await Overview.getData();
+
+    res.json(overview[0])
+})
+
+
+
 
 router.get('/3rd_floor', async (req, res) =>{
     // var floor3 = await Floor3.getData();
