@@ -25,7 +25,39 @@ function getData(){
         let sql = "SELECT * FROM overview;"
         const result = pool.query(sql)
         if (result) {
+            pool.end()
             return result
         }
+        pool.end()
     } catch {}
 }
+
+// require("dotenv").config();
+// const { Pool } = require('pg');
+
+// module.exports = {
+//     getData,
+// }
+
+// const pool = new Pool({
+//     host: process.env.PGHOST,
+//     user: process.env.PGUSER,
+//     password: process.env.PGPASSWORD,
+//     database: process.env.PGDATABASE,
+//     port: process.env.PGPORT,
+//     ssl: null,
+//     query_timeout: 60000,
+//     connectTimeout: 200
+// })
+
+// function getData(){
+//     try {
+//         let sql = "SELECT * FROM overview;"
+//         const result = pool.query(sql)
+//         if (result) {
+//             pool.end();
+//             return result
+//         }
+//         pool.end();
+//     } catch {}
+// }
