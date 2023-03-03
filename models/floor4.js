@@ -1,36 +1,35 @@
 require("dotenv").config();
-const mysql = require('mysql2/promise')
+const { Pool } = require('pg');
 
-let connection;
+module.exports = {
+    getData,
+}
 
-async function getData(){
+const pool = new Pool({
+    host: process.env.PGHOST,
+    user: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
+    database: process.env.PGDATABASE,
+    port: process.env.PGPORT,
+    ssl: null,
+    query_timeout: 60000,
+    connectTimeout: 200
+})
+
+ function getData(){
     try {
-        connection =await mysql.createConnection({
-            host: process.env.MYSQL_HOST,
-            user: process.env.MYSQL_USER,
-            password: process.env.MYSQL_PASSWORD,
-            database: process.env.MYSQL_DATABASE,
-            port: process.env.MYSQL_PORT,
-            ssl: null,
-            connectTimeout: 200
-        })
+        let sql = "SELECT * FROM mtlcarpark.floor4;"
+        const result = pool.query(sql)
+        if (result) {
+            return result
+        }
+    } catch {
 
-        var [Items, field] = await connection.query('SELECT * FROM floor4')
-        // connection.close()
-        return { success: true, data: Items }
-    } catch (error) {
-        // connection.close()
-        return { success: false, data: null }
     }
 }
 
-function close() {
-    connection.end();
-    console.log('Closed database connection');
-}
-
 process.on('exit', () => {
-    close();
+    pool.end()
 });
 
 process.on('SIGINT', () => {
@@ -47,5 +46,3 @@ process.on('SIGUSR1', () => {
     console.log('Received SIGUSR1 signal');
     process.exit(1);
 });
-
-module.exports = { getData, close };

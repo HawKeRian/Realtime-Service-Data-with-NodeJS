@@ -11,28 +11,28 @@ const History = require('../models/history')
 router.get('/', async (req, res) =>{
     var overview = await Overview.getData();
 
-    res.render('index', {data: overview[0]})
+    res.render('index', {data: overview.rows[0]})
     res.end()
 })
 
 router.get('/3rd_floor', async (req, res) =>{
     var floor3 = await Floor3.getData();
 
-    res.render('3rd_floor', {data: floor3[0]})
+    res.render('3rd_floor', {data: floor3.rows})
     res.end()
 })
 
 router.get('/4th_floor', async (req, res) =>{
     var floor4 = await Floor4.getData();
 
-    res.render('4th_floor', {data: floor4[0]})
+    res.render('4th_floor', {data: floor4.rows})
     res.end()
 })
 
 router.get('/5th_floor', async (req, res) =>{
     var floor5 = await Floor5.getData();
 
-    res.render('5th_floor', {data: floor5[0]})
+    res.render('5th_floor', {data: floor5.rows})
     res.end()
 })
 
@@ -41,28 +41,22 @@ router.get('/5th_floor', async (req, res) =>{
 
 router.get('/api/overview', async (req, res) =>{
     var overview = await Overview.getData();
-    overview = [{
-        floor3: parseInt(Math.random()*100),
-        floor4: parseInt(Math.random()*100),
-        floor5: parseInt(Math.random()*100),
-    }]
-
-    res.json(overview[0])
+    res.json(overview.rows[0])
 })
 
 router.get('/api/floor3', async (req, res) =>{
     var floor3 = await Floor3.getData();
-    res.json(floor3[0])
+    res.json(floor3.rows)
 })
 
 router.get('/api/floor4', async (req, res) =>{
     var floor4 = await Floor4.getData();
-    res.json(floor4[0])
+    res.json(floor4.rows)
 })
 
 router.get('/api/floor5', async (req, res) =>{
     var floor5 = await Floor5.getData();
-    res.json(floor5[0])
+    res.json(floor5.rows)
 })
 
 

@@ -10,7 +10,6 @@ setInterval( async () => {
     fetch('/api/overview')
     .then(response => response.json())
     .then(data => {
-    
         if (data) {
             totalCar[0].innerHTML = data.floor3 + " ช่อง"
             totalCar[1].innerHTML = data.floor4 + " ช่อง"
@@ -21,4 +20,4 @@ setInterval( async () => {
             totalCar[2].innerHTML = "-"
         }
     })
-}, 3000);
+}, 300000);

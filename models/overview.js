@@ -1,63 +1,48 @@
 require("dotenv").config();
-var mysql = require('mysql')
-const util = require('util')
+const { Pool } = require('pg');
 
 module.exports = {
     getData,
 }
 
-var pool = mysql.createConnection({
-    connectionLimit: 10,
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE,
-    port: process.env.MYSQL_PORT,
+const pool = new Pool({
+    host: process.env.PGHOST,
+    user: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
+    database: process.env.PGDATABASE,
+    port: process.env.PGPORT,
     ssl: null,
-    queryTimeout: 60000,
+    query_timeout: 60000,
     connectTimeout: 200
 })
 
-pool.query = util.promisify(pool.query);
-
-function getData(){
+ function getData(){
     try {
-        let sql = "SELECT * FROM overview;"
+        let sql = "SELECT * FROM mtlcarpark.overview;"
         const result = pool.query(sql)
         if (result) {
-            pool.end()
             return result
         }
-        pool.end()
-    } catch {}
+    } catch {
+
+    }
 }
 
-// require("dotenv").config();
-// const { Pool } = require('pg');
+process.on('exit', () => {
+    pool.end()
+});
 
-// module.exports = {
-//     getData,
-// }
+process.on('SIGINT', () => {
+    console.log('Received SIGINT signal');
+    process.exit(1);
+});
 
-// const pool = new Pool({
-//     host: process.env.PGHOST,
-//     user: process.env.PGUSER,
-//     password: process.env.PGPASSWORD,
-//     database: process.env.PGDATABASE,
-//     port: process.env.PGPORT,
-//     ssl: null,
-//     query_timeout: 60000,
-//     connectTimeout: 200
-// })
+process.on('SIGTERM', () => {
+    console.log('Received SIGTERM signal');
+    process.exit(1);
+});
 
-// function getData(){
-//     try {
-//         let sql = "SELECT * FROM overview;"
-//         const result = pool.query(sql)
-//         if (result) {
-//             pool.end();
-//             return result
-//         }
-//         pool.end();
-//     } catch {}
-// }
+process.on('SIGUSR1', () => {
+    console.log('Received SIGUSR1 signal');
+    process.exit(1);
+});

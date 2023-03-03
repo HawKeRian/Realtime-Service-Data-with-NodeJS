@@ -1,4 +1,6 @@
 var time = document.getElementById('time')
+fetchData4th(firstData);
+
 setInterval(() => {
         var getTime = (new Date(Date.now()).toLocaleString()).split(',');
         time.innerHTML = getTime[0] + '<br>' + getTime[1]
@@ -10,7 +12,7 @@ setInterval(() => {
     .then(data => {
         fetchData4th(data)
     })
-}, 3000);
+}, 300000);
 
 function fetchData4th(data) {
     var floor4_slot = document.querySelectorAll('[id^=slot_4]')
@@ -26,12 +28,12 @@ function fetchData4th(data) {
     });
     
     for (let i = 0; i < floor4_slot.length; i++) {
-        for (let j = 0; j < data.data.length; j++) {
-            if (data.data[j] !== undefined) {
-                var convertID = data.data[j].zone + data.data[j].name_id.toString().padStart(3, '0')
+        for (let j = 0; j < data.length; j++) {
+            if (data[j] !== undefined) {
+                var convertID = data[j].zone + data[j].name_id.toString().padStart(3, '0')
                 
                 if (('slot_' + convertID) == floor4_slot[i].id) {
-                    floor4_slot[i].innerHTML = data.data[j].status
+                    floor4_slot[i].innerHTML = data[j].status
 
                     if (floor4_slot[i].innerHTML == "0") {
                         floor4_slot[i].style = 'background-color: rgb(100,255,100); color: rgb(100,255,100);';
@@ -52,12 +54,12 @@ function fetchData4th(data) {
     for (let i = 0; i < overall_f4.length; i++) {
         var countSlot4 = 0;
 
-        for (let j = 0; j < data.data.length; j++) {
-            if (data.data[j] !== undefined) {
-                var convertZone = 'overall_' + data.data[j].zone
+        for (let j = 0; j < data.length; j++) {
+            if (data[j] !== undefined) {
+                var convertZone = 'overall_' + data[j].zone
                 
                 if (convertZone == overall_f4[i].id) {
-                    if (data.data[j].status == 0) {
+                    if (data[j].status == 0) {
                         countSlot4 += 1;
                     }
                 }
